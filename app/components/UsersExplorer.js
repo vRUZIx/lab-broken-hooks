@@ -30,9 +30,9 @@ export default function UsersExplorer() {
   }
 
   function handleToggleFavorite(userId) {
-    const user = users.find((item) => item.id === userId);
-    user.favorite = !user.favorite;
-    setUsers(users);
+    setUsers((prev) =>
+      prev.map((u) => (u.id === userId ? { ...u, favorite: !u.favorite } : u))
+    );
   }
 
   if (loading) {

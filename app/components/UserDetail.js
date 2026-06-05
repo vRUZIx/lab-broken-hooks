@@ -17,7 +17,7 @@ export default function UserDetail({ userId }) {
       setPosts(data);
       setLoading(false);
     });
-  }, [userId, posts]);
+  }, [userId]);
 
   if (userId == null) {
     return <p className={styles.placeholder}>Select a user to see their posts.</p>;
